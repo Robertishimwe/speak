@@ -43,5 +43,7 @@ recognition.onerror = event => {
 
 // Listen for the end of the recognition process
 recognition.onend = () => {
+  
+  alert(`${transcript}`);
   console.log('Speech recognition stopped.');
 };

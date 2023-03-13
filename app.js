@@ -1,6 +1,6 @@
 // Initialize the speech recognition object
 const recognition = new webkitSpeechRecognition();
-let transcript;
+let transcript2;
 
 // Set the recognition settings
 recognition.continuous = true;
@@ -25,7 +25,9 @@ recognition.onresult = event => {
   const result = event.results[event.results.length - 1];
   
   // Get the transcribed text
-  transcript = result[0].transcript.trim();
+  const transcript = result[0].transcript.trim();
+  transcript2 = transcript;
+  
   
   // Append the transcribed text to the text element
   text.innerHTML += `<p>${transcript}</p>`;
@@ -44,6 +46,6 @@ recognition.onerror = event => {
 // Listen for the end of the recognition process
 recognition.onend = () => {
   
-  alert(`${transcript}`);
+  alert(`${transcript2}`);
   console.log('Speech recognition stopped.');
 };
